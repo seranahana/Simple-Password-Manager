@@ -10,7 +10,7 @@ namespace SimplePM.Forms
         {
             InitializeComponent();
             customButton1.SF.Alignment = StringAlignment.Center;
-            for (int i = 8; i < 100; i++)
+            for (int i = 8; i < 128; i++)
             {
                 customComboBox1.Items.Add(i);
             }
@@ -22,8 +22,7 @@ namespace SimplePM.Forms
             int value;
             if (int.TryParse(customComboBox1.SelectedItem.ToString(), out value))
             {
-#warning change this to just Generate
-                customTextBox1.Texts = PasswordGenerator.GenerateReliable(value);
+                customTextBox1.Texts = PasswordGenerator.Generate(value);
             }
         }
     }
